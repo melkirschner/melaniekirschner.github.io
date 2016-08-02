@@ -23,6 +23,29 @@ $(document).ready(function(){
 }); 
 
 
+function loopVideos(num) {
+  if (num == 0) {
+    $(".countdown").hide();
+    $('h2').show();
+  }
+  else if (num > 0) {
+    $(".video-1").show();
+    setTimeout(function() { $(".video-1").hide(); }, 5000);
+    setTimeout(function() { $(".video-2").show(); }, 5000);
+     setTimeout(function() { $(".video-2").hide(); }, 10000);
+      setTimeout(function() { $(".video-3").show(); }, 10000);
+      setTimeout(function() { $(".video-3").hide(); }, 15000);
+      setTimeout(function() { $(".video-4").show(); }, 15000);
+      setTimeout(function() { $(".video-4").hide(); }, 20000);
+      setTimeout(function() { $(".video-5").show(); }, 20000);
+      setTimeout(function() { $(".video-5").hide(); }, 25000);
+      setTimeout(function() { $(".video-6").show(); }, 25000);
+      setTimeout(function() { $(".video-6").hide(); loopVideos(num-1);}, 30000);
+        
+      
+  }
+  
+}
 
 // document.getElementById('#time1').innerHTML = 
 //      sessionStorage.getItem('time');
@@ -35,6 +58,10 @@ $("#start-now").click(function(e) {
 
   e.preventDefault();
 
+
+    $('html,body').animate({
+        scrollTop: $(".video-section").offset().top},
+        'slow');
 
 
 
@@ -63,21 +90,29 @@ setInterval(function(){
 },5000);
 
 
+if (sessionStorage.timer==7) {
+loopVideos(1);
+}
 
-  $(".video-1").show();
-  setTimeout(function() { $(".video-1").hide(); }, 5000);
-    setTimeout(function() { $(".video-2").show(); }, 5000);
-     setTimeout(function() { $(".video-2").hide(); }, 10000);
-      setTimeout(function() { $(".video-3").show(); }, 10000);
-      setTimeout(function() { $(".video-3").hide(); }, 15000);
-      setTimeout(function() { $(".video-4").show(); }, 15000);
-      setTimeout(function() { $(".video-4").hide(); }, 20000);
-      setTimeout(function() { $(".video-5").show(); }, 20000);
-      setTimeout(function() { $(".video-5").hide(); }, 25000);
-      setTimeout(function() { $(".video-6").show(); }, 25000);
-      setTimeout(function() { $(".video-6").hide(); }, 30000);
-        setTimeout(function() { $(".countdown").hide(); }, 30000);
-      setTimeout(function() { $('h2').show(); }, 30000);
+else if (sessionStorage.timer==15) {
+  loopVideos(2);
+}
+
+
+  // $(".video-1").show();
+  // setTimeout(function() { $(".video-1").hide(); }, 5000);
+  //   setTimeout(function() { $(".video-2").show(); }, 5000);
+  //    setTimeout(function() { $(".video-2").hide(); }, 10000);
+  //     setTimeout(function() { $(".video-3").show(); }, 10000);
+  //     setTimeout(function() { $(".video-3").hide(); }, 15000);
+  //     setTimeout(function() { $(".video-4").show(); }, 15000);
+  //     setTimeout(function() { $(".video-4").hide(); }, 20000);
+  //     setTimeout(function() { $(".video-5").show(); }, 20000);
+  //     setTimeout(function() { $(".video-5").hide(); }, 25000);
+  //     setTimeout(function() { $(".video-6").show(); }, 25000);
+  //     setTimeout(function() { $(".video-6").hide(); }, 30000);
+  //       setTimeout(function() { $(".countdown").hide(); }, 30000);
+  //     setTimeout(function() { $('h2').show(); }, 30000);
 
   // setTimeout(function() {
   //   $('.video-1').hide() },3000);
@@ -185,6 +220,20 @@ $('#close').on('click', function (){
 $('.signup-form').hide();
 });
 
+$('nav a').on('click', function(e) {
+ 
+  e.preventDefault();
+ 
+  var thisTarget = $(this).attr('href');
+  // get that section's top offset
+  var targetOffset = $(thisTarget).offset().top;
+  // use jQuery.animate() to animate the body's
+  // scrollTop to the targetOffest
+  $('body').animate({
+    scrollTop: targetOffset -140
+  }, 600);
+});
+
 
 // var time=sessionStorage.timer
 
@@ -245,21 +294,3 @@ $('.signup-form').hide();
 // },5000);
 
 
-
-// Smooth scroll this mother!
-
-// Do it when someone clicks a nav link
-// $('nav a').on('click', function(e) {
-//   // prevent the standard link operation on click
-//   e.preventDefault();
-//   // use the href of the link to identify what
-//   // section to scroll to
-//   var thisTarget = $(this).attr('href');
-//   // get that section's top offset
-//   var targetOffset = $(thisTarget).offset().top;
-//   // use jQuery.animate() to animate the body's
-//   // scrollTop to the targetOffest
-//   $('body').animate({
-//     scrollTop: targetOffset-20
-//   }, 600);
-// });
