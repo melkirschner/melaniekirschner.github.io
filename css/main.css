@@ -124,7 +124,7 @@ header {
   background-size: cover;
 background-attachment: fixed;
 /*min-width: 915px;*/
-    min-height: 570px;
+    min-height: 670px;
     width:100%; /*maybe delete this line*/
     margin-top: -60px;
 
@@ -235,6 +235,7 @@ button {
 padding: 1em 1.5em 0 0;
     text-align: right;
     font-size: 1.25em;
+    cursor: pointer;
   
 }
 
@@ -315,8 +316,10 @@ footer p {
   width:40%;
   border:1px #000 solid;
   background-color: #ffffff;
-      font-family: 'Fjalla One', sans-serif;
-      margin-bottom:6em;
+  font-family: 'Fjalla One', sans-serif;
+  margin-bottom:6em;
+  font-size: 1.25rem;
+
 /*  min-width:466px;*/
 
 
@@ -334,19 +337,7 @@ background-image: url('../img/teal-background.jpg');
 .contact h1 {
   color:#ffffff;
 }
-/*.contact-section {
-    margin: 0 auto;
-  width:50%;
-}
 
-
-
-/*.contact-info {
-  width:50%;
-}
-.comment-box {
-  width:50%;
-}*/
 
 .col-half {
   width: 50%;
@@ -368,8 +359,12 @@ textarea {
 
 input[type="text"] {
   width:80%;
-
+  padding: .35rem;
+  padding-right: 0;
+  min-width: 150px;
+  margin-bottom: .25rem;
 }
+
 
 
 label {
@@ -414,6 +409,7 @@ margin:0 auto;
 
 .video-section p {
   padding: 1em 0;
+
 }
 
 .videos img {
@@ -542,7 +538,7 @@ margin: 1em auto;
 
 
   #about p {
-    padding:0 6.5rem;
+    padding:0 2.5rem;
   }
 }
 
@@ -563,6 +559,18 @@ input[type="text"] {
 }
 }
 
+@media only screen and (max-width:495px) {
+.signup-form {
+  
+  transform:translateY(-140px) translateX(235%);
+}
+}
+
+@media only screen and (max-width:450px) {
+.change {
+  margin: 1rem .25rem 0 .25rem
+}
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

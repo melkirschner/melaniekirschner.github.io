@@ -16,11 +16,23 @@ background-color:#ffffff;
 border: 0.125rem solid #07C1c0;
 }
 
+
+#start-now {
+	margin-bottom: 100px;
+}
+
+.main-timer {
+/*	display:none;
+*/}
+
 .video-section p {
 	padding: .5em 0 2em 0;
 	display: inline;
 }
 
-#start-now {
-	margin-bottom: 100px;
+#total-timer-countdown {
+	display:none;
+	padding-top:0;
+	padding-bottom:0;
+	color:#07C1c0;
 }
