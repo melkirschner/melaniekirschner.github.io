@@ -559,6 +559,11 @@ input[type="text"] {
   padding-right:0;
   padding-left:0;
 }
+
+.signup-form p {
+    display: none;
+
+}
 }
 
 @media only screen and (max-width:495px) {
@@ -572,10 +577,6 @@ input[type="text"] {
 @media only screen and (max-width:450px) {
 .change {
   margin: 1rem .25rem 0 .25rem
-}
-
-#signup-form p {
-  display: none;
 }
 
 }
