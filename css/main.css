@@ -562,7 +562,7 @@ input[type="text"] {
 }
 
 @media only screen and (max-width:495px) {
-.signup-form {
+#signup-form {
   
   transform:translateY(-400px) translateX(235%);
   z-index:200;
@@ -573,6 +573,11 @@ input[type="text"] {
 .change {
   margin: 1rem .25rem 0 .25rem
 }
+
+#signup-form p {
+  display: none;
+}
+
 }
 /* ==========================================================================
    Helper classes
